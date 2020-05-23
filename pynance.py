@@ -15,4 +15,5 @@ end = dt.datetime(2019, 12, 31)
 # df = web.DataReader('TSLA', 'quandl', start, end,
 #                     api_key == 'KptHVXnYi7RdK5YUNGkx')
 df = quandl.get("BITFINEX/BTCUSD")
-print(df.head(5))
+print(df)
+df.to_csv('btc.csv')

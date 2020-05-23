@@ -4,11 +4,15 @@ from matplotlib import style
 import pandas as pd
 import pandas_datareader.data as web
 import quandl
+quandl.ApiConfig.api_key = "KptHVXnYi7RdK5YUNGkx"
+
 style.use('ggplot')
 
 start = dt.datetime(2010, 1, 1)
 end = dt.datetime(2019, 12, 31)
 
 # symbol =
-df = web.DataReader('TSLA', 'yahoo', start, end)
+# df = web.DataReader('TSLA', 'quandl', start, end,
+#                     api_key == 'KptHVXnYi7RdK5YUNGkx')
+df = quandl.get("BITFINEX/BTCUSD")
 print(df.head(5))
